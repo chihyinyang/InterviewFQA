@@ -1,7 +1,7 @@
 # InterviewFQA
 
 ## Overview
-- [viewController - life cycle](ViewController_-_life_cycle)
+- [viewController - life cycle](##ViewController_-_life_cycle)
 - [App - life cycle](App_-_life_cycle)
 - Optional
 - @escaping
