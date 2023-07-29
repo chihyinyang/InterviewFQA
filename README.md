@@ -1,7 +1,7 @@
 # InterviewFQA
 
 ## Overview
-- [viewController - life cycle](#head1234)
+- [viewController - life cycle](#viewControllerLifeCycle)
 - [App - life cycle](App_-_life_cycle)
 - Optional
 - @escaping
@@ -16,10 +16,6 @@
 - Access control: open vs public
 - Dependency injection
 - Approach for data persistence
-- keyChain
-- userDefault
-- CoreData
-- Files
 - Singletion
 - troubleShooting
 - Retain cycle, weak, unowned, ARC
@@ -27,7 +23,9 @@
 - Combine
 
 
-<a name="head1234">hellop</a>
+<h2 name="viewControllerLifeCycle">ViewController - Life cycle</h2>
+
+<h2 name="appLifeCycle">App - life cycle</h2>
 
 
 
