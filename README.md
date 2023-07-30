@@ -3,8 +3,8 @@
 ## Overview
 - [viewController - life cycle](#viewControllerLifeCycle)
 - [App - life cycle](App_-_life_cycle)
-- Optional
-- @escaping
+- [Optional](optional)
+- [@escaping](escaping)
 - Struct vs class
 - Value type vs reference type
 - State variable
@@ -94,28 +94,49 @@
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 - `application(_:didFinishLaunchingWithOptions:)`
   - This method will be called when app is launched.
+    
 - `applicationWillResignActive(_:):`
   - This method will be called when the app is about to transitioin from an active to an inactive.
   - example：incoming phone call or a system alert appear.
+    
 - `applicationDidEnterBackground(_:)`
   - This method will be called when the app enter background, either user pressed the home button or because another app is launched.
+    
 - `applicationWillEnterForeground(_:)`
   - This method will be called when the app is back to the foreground.
+    
 - `applicationDidBecomeActive(_:):`
   - This method is called when tha app becomes active.
+    
 - `applicationWillTerminate(_:):`
   - This method will be called when the app is about to terminate.
+    
 - `applicationDidReceiveMemoryWarning(_:):`
   - This method is called when the system issues a memory warning to the app due to low memory conditions.
   - You can release the unnecessary memory and resources to prevent the app from being terminated.
 
 
+<h2 name="optional">Optional</h2>
+An optional is a way to handle a variable that mighe be empty. It adds a question mark to the variable's type, indicating the possibility to be nil.
 
+To work with optional value, there were two safe way we can obtain the value: Optional chaining and Conditional binding. 
 
+It is important to note that force unwrapping is unsafe way to get the value. It would cause a crash when you try to get the value from the variable, but the variable is empty.
 
+<h2 name="escaping">@escaping</h2>
 
+### What's the difference between an @escaping and a non-@escaping closure?
 
+The difference between an @escaping and a non-@escaping closure is depends on how the closure is used and its lifetime.
 
+##### non-@escaping closure
+non-@escaping closure is the default behaviour in Swift. It is a closure that is guaranteed to be executed before the enclosing function returns. It means that the closure is synchronous and doesn't outlive the function itself.
+
+##### @escaping closure
+@escaping closure is a closure that can outlive the function, it means it can be stored or assign to a varibles. @escaping closure typically used when you want to capture the closure.
+
+##### Key Diff
+The key difference lies in how the closure is treated by the complier. For non-@escaping closures, the compiler can make certain optimazations since it know the closure will not outlive the function. In constrast, @escaping closure requires addtional considerations by the compiler to ensure the capured values retained and the closure is available when needed. 
 
 
 
