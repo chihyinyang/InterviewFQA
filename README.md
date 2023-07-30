@@ -9,12 +9,12 @@
 - [Value type vs reference type](valueVSReference)
 - [State variable](stateVariable)
 - [Object-Oriented Programming(OOP)](oop)
-- [Protocol oriented programming](pop)
+- [Protocol-Oriented programming](pop)
 - Architecture: MVVM, MVVM-C, MVC
-- [SOLID principles](SOLID Principle)
-- Unit test, UITest
-- Access control: open vs public
-- Dependency injection
+- [SOLID principles](SOLID)
+- [Unit Test](unitTest), [UI Test](uiTest)
+- [Access control: open vs public](accessControl)
+- [Dependency injection](DI)
 - Approach for data persistence
 - Singletion
 - troubleShooting
@@ -208,7 +208,7 @@ Polymorphism allows objects of different classes to be treated as objects of a c
 <h2 name="pop">Protocol-Oriented programming(POP)</h2>
 Protocol-Oriented Programming is a programming paradigm that emphasizes the use of protocols to define interfaces and behaviour, promoting code reuse and flexibility.
 
-### Key Concepts:
+#### Key Concepts:
 
 ##### 1. protocol
 A protocol in Swift like as a blueprint defining a set of methods, properties, and other requirements. These requirements act as a contract that any class, struct, or enum adopting the protocol must fulfill.
@@ -222,8 +222,74 @@ Protocols can be extended to provide default impletmentations for some of their 
 ##### 4. compositions
 Code reuse is achieved through composition rather than inheritance. Instead of using subclassing, you create small, modular protocols and then compose types by conforming to multiple protocols.
 
-### Benefits:
+#### Benefits:
 - Code Reusability
 - Multiple Inheritance
 - Protocol Extensioins
 - Testability
+
+
+<h2 name="SOLID">SOLID Principle</h2>
+
+#### Single responsible
+Responsible for one
+
+#### Open-closed
+Open to expand, close to modification
+
+#### Liskov substitution 
+Define that object of a superclass should be replaceable with object of its subclass without breaking the application
+
+#### Interface segregation 
+No code should be force to depend on method it doesn’t use.
+
+#### Dependence inversion
+High level should not import anything from low-level modules. Both should depend on abstractions
+
+
+<h2 name="unitTest">Unit Testing</h2>
+
+The purpose of unit testing is to ensure that each unit of code functions as intended and to catch and fix bugs early in the development process.
+
+#### Key Purposes:
+1. Isolation:
+   Unit tests isolate specific piece of code, allowing us to verify the functionality of each unit independently.
+   -> This makes it easier to identify and fix issue.
+
+2. Early Bug Detection
+
+<h2 name="uiTest">UI Testing</h2>
+
+Unlike unit tests that test individual components in isolation, UI tests interact with the application as a whole, simulating user interactions to verify that the ui behaves correctly.
+
+#### Key Purposes:
+1. User Experience Validation
+2. Platform Consistency
+3. Automated Validation
+
+#### Things to notice in UI testing:
+1. Ensure that the test environment is setup with necessary test data.
+2. Ansnchronous Operations, some UI interactions and actions may take time to complete.
+
+<h2 name="accessControl">Access control</h2>
+
+What's the difference between open and public?
+
+##### open: 
+This is the highest level of access and allows entities to be subclassed and overridden outside the module where they are defined. It is typically used for framework or library developers who want to allow other developers to subclass and modify their classes or override their methods. open entities can be accessed and modified from any module.
+
+##### public: 
+This level of access allows entities to be accessed from any module but does not allow subclassing or overriding outside the module where they are defined. public entities can be used and accessed by other modules, but they cannot be subclassed or overridden in those modules.
+
+##### To summarise
+Open provides the broadest level of access, allowing subclassing and overriding from outside the module, while public provides access to entities from other modules but restricts subclassing and overriding to
+
+
+<h2 name="DI">Dependency Injection</h2>
+
+In DI, instead of components creating or obtaining their dependencies internally, the dependencies are provided from external sources. This external source, often called the "dependency injector”, is responsible for creating and managing the dependencies.  
+
+Overall, Dependency Injection promotes decoupling, flexibility, and maintainability in software systems by separating the responsibility of managing dependencies from the components themselves.
+
+
+
