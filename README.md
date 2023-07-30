@@ -5,13 +5,13 @@
 - [App - life cycle](App_-_life_cycle)
 - [Optional](optional)
 - [@escaping](escaping)
-- Struct vs class
-- Value type vs reference type
-- State variable
-- Objective oriented programming
-- Protocol oriented programming
+- [Struct vs Class](structVSClass)
+- [Value type vs reference type](valueVSReference)
+- [State variable](stateVariable)
+- [Object-Oriented Programming(OOP)](oop)
+- [Protocol oriented programming](pop)
 - Architecture: MVVM, MVVM-C, MVC
-- SOLID principles
+- [SOLID principles](SOLID Principle)
 - Unit test, UITest
 - Access control: open vs public
 - Dependency injection
@@ -123,7 +123,7 @@ To work with optional value, there were two safe way we can obtain the value: Op
 
 It is important to note that force unwrapping is unsafe way to get the value. It would cause a crash when you try to get the value from the variable, but the variable is empty.
 
-<h2 name="escaping">@escaping</h2>
+<h2 name="structVSClass">@escaping</h2>
 
 ### What's the difference between an @escaping and a non-@escaping closure?
 
@@ -139,9 +139,91 @@ non-@escaping closure is the default behaviour in Swift. It is a closure that is
 The key difference lies in how the closure is treated by the complier. For non-@escaping closures, the compiler can make certain optimazations since it know the closure will not outlive the function. In constrast, @escaping closure requires addtional considerations by the compiler to ensure the capured values retained and the closure is available when needed. 
 
 
+<h2 name="escaping">Struct vs Class</h2>
+
+### What is the difference between struct and a class in Swift?
+
+##### Struct
+Struct is value type, and it doesn't support inheritance. And they are allocated on the stack, they are deallocated automatically when that go out of scope.
+
+##### Class
+Class is reference type, and it support inheritance, and they're stored on the heap and require memory management using ARC. The memory is dellocated when there are zero reference to the instance.
+
+##### Which one is better?
+Choosing between a Struct and a Class depends on the specific use case and requirements. Struct are suitable for small, simple, and immutable data structure, while classes are preferred for more complex objects that require reference semantics, inheritance, and more advanced features.
+
+<h2 name="valueVSReference">Value type vs reference type</h2>
+
+### What's the difference between a value type and a reference type?
+
+##### Value Type
+A value type is a type that is copied when assigned to a new variable or passed as a function argument. Modifying a copy of a value type does not affect to the original instance. Examples of value type in Swift include struct, intergers, string and enum.
+
+##### Reference Type
+A reference type is a type that is passed b reference. When assigned to a new variable or passed as an argument, a referenceto the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
+
+<h2 name="stateVariable">State variable</h2>
+When you declare a property or method as `state`, it means there is only one copy of that property or method shared across all instances of the class or struct, and you can access it directly through the type itself.
+
+##### Static Property
+- A static property is associated with the type itself, not with the instance of the type.
+- All instances of the type share the same value for the static property.
+- Static properties or methods can be accessed direrctly through the type without creating an instance of the type.
+  
+  ```
+  class AClass {
+    static var count = 0
+  }
+  // Accessing the static property without creating an instance.
+  let value = AClass.count
+  ```
 
 
+<h2 name="oop">Object-Oriented Programming(OOP)</h2>
+
+In OOP, software is designed and organized using objects, which are instances of classses representing real-world entities or concerpts.
+
+#### Key Principles:
+
+##### 1. Encapsulation
+Encapsulation is the binding of data and methods into one entity to define itself and the scope of its operations. The bundling of data and methods into individual entities hides complexity by providing abstracted interface to program and interact with. The most common example of such a unit would be a class/object setting. 
+
+##### 2. Abstraction
+Abstraction focus on representing the essential features of an object while hiding the unnecessary details. Swift Example: Protocol
+
+##### 3. Inheritance
+Inheritance enables a class to inherit properties and behavious from another class. This promotes code reuse and hierarchical relationships between classes.
+
+##### 4. Polymorphism
+Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent multiple underlying data types, providing flexibility and extensibility in the code.
+
+#### Benefits
+- Modularity
+- Reusability
+- Maintainability
+- Flexibility
+- Scalability
 
 
+<h2 name="pop">Protocol-Oriented programming(POP)</h2>
+Protocol-Oriented Programming is a programming paradigm that emphasizes the use of protocols to define interfaces and behaviour, promoting code reuse and flexibility.
 
+### Key Concepts:
 
+##### 1. protocol
+A protocol in Swift like as a blueprint defining a set of methods, properties, and other requirements. These requirements act as a contract that any class, struct, or enum adopting the protocol must fulfill.
+
+##### 2. Protocol Adoption
+A class, struct, or enum can adopt a protocol by declaring that it conforms to it.
+
+##### 3. Protocol Extensions
+Protocols can be extended to provide default impletmentations for some of their requirments.
+
+##### 4. compositions
+Code reuse is achieved through composition rather than inheritance. Instead of using subclassing, you create small, modular protocols and then compose types by conforming to multiple protocols.
+
+### Benefits:
+- Code Reusability
+- Multiple Inheritance
+- Protocol Extensioins
+- Testability
