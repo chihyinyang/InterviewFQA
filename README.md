@@ -25,30 +25,89 @@
 
 <h2 name="viewControllerLifeCycle">ViewController - Life cycle</h2>
 
-### init
-- where we create the viewController
-- setup data (example: for the injection)
-### LoadView
+### Life Cycle happens order
+1. init
+2. loadview
+3. viewDidLoad
+4. viewWillAppear
+5. viewWillLayoutSubviews 
+6. viewDidLayoutSubviews
+7. viewWillLayoutSubviews ← repeat here
+8. viewDidLayoutSubviews ← repeat here
+9. viewDidAppear
+10. viewWillDisappear
+11. viewDidDisappear
+12. deinit  
+
+#### init
+- It would be called when you create an instance of the viewController.
+- We can create custom initializer, the intializer is added to accept a custom property and perform the necessary setup before calling the superclass's designed intializer. Example: injection
+  
+#### LoadView
+- This method is called automatically by the system when the view property of the viewController is accessed, and the view is currently nil.
 - ViewController creates its custom view hierarchy or a single root view that will act as the container for other subviews.
 - Once the view hierarchy is created, the viewController sets it as te value of its `view` property using the `view` property setter.
-### ViewDidLoad
-- This method will be called once in vc life cycle when all views are loaded.
+- We can create our custom root view by using `let rootView = UIView(frame: UIScreen.main.bounds)`
+  
+#### ViewDidLoad
+- This method will be called once in vc life cycle after the view has been loaded into memory but before it is presented.
 - Do the things that need to be done once.
-  - network calls
-  - user interface
-### ViewWillAppear
-### viewWillLayoutSubviews
-### viewDidLayoutSubviews
-### ViewDidAppear
-### viewWillDisappear
-### viewDidDisapppear
-### deinit
+  - Data fetching
+  - Subview customization
 
-### didReceiveMemoryWarning
-### viewWillTransistion(to: with:)
+#### ViewWillAppear
+- This method is called when the view becomes visible to the user.
+- You do the animation setup here.
+- I would do the navigationBar updates here.
+  
+#### viewWillLayoutSubviews
+- This method will be called before the view's subviews are laid out.
+- This method is called frequently, so we should avoid performing expensive or time-comsuming operations within this method.
+  
+#### viewDidLayoutSubviews
+- This method will be called after the view's subviews have been laid out.
+- Need avoid performing heavy computations or layout changes that trigger another layout pass within this method.
+  
+#### ViewWillAppear
+- This method is called whenever the view is going to be presented.
+- If you want to add animations or transitions when the view appears, viewWillAppear(_:) is a suitable place to set up those animations before the view is displayed.
+  
+#### ViewDidAppear
+- This method is called after the view has finished animating and is fully visible to the user.
+  
+#### viewWillDisappear
+- This is method is called when the view is about to removed or disappear from the screen.
+-  This is a appropriate place to perform any cleanup or state-saving tasks.
+  
+#### viewDidDisapppear
+- This method is called after the view has disappeared from the screen.
+- We can perform any final cleanup or release of resources associated with view or the viewController.
+- Stop Animation or Timers.
+  
+#### deinit
+- This method will be called before an object is deallocated from memory.
+- We can release any resources associated with the object that need manual cleanup.
+- Removing observers
 
 <h2 name="appLifeCycle">App - life cycle</h2>
 
+#### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
+- `application(_:didFinishLaunchingWithOptions:)`
+  - This method will be called when app is launched.
+- `applicationWillResignActive(_:):`
+  - This method will be called when the app is about to transitioin from an active to an inactive.
+  - example：incoming phone call or a system alert appear.
+- `applicationDidEnterBackground(_:)`
+  - This method will be called when the app enter background, either user pressed the home button or because another app is launched.
+- `applicationWillEnterForeground(_:)`
+  - This method will be called when the app is back to the foreground.
+- `applicationDidBecomeActive(_:):`
+  - This method is called when tha app becomes active.
+- `applicationWillTerminate(_:):`
+  - This method will be called when the app is about to terminate.
+- `applicationDidReceiveMemoryWarning(_:):`
+  - This method is called when the system issues a memory warning to the app due to low memory conditions.
+  - You can release the unnecessary memory and resources to prevent the app from being terminated.
 
 
 
