@@ -15,10 +15,10 @@
 - [Unit Test](unitTest), [UI Test](uiTest)
 - [Access control: open vs public](accessControl)
 - [Dependency injection](DI)
-- Approach for data persistence
-- Singletion
-- troubleShooting
-- Retain cycle, weak, unowned, ARC
+- [Approach for data persistence](dataPersistence)
+- [Singletion](singleton)
+- [TroubleShooting](troubleShooting)
+- [Retain cycle](retainCycle), [strong, weak, unowned](refType), [ARC](arc)
 - Bounds and frame
 - Combine
 
@@ -290,6 +290,80 @@ Open provides the broadest level of access, allowing subclassing and overriding 
 In DI, instead of components creating or obtaining their dependencies internally, the dependencies are provided from external sources. This external source, often called the "dependency injector”, is responsible for creating and managing the dependencies.  
 
 Overall, Dependency Injection promotes decoupling, flexibility, and maintainability in software systems by separating the responsibility of managing dependencies from the components themselves.
+
+
+<h2 name="dataPersistence">Approach for data persistence</h2>
+
+#### coreData
+Core Data is object-oriented, which makes it easy to store and manage complex data models. Core Data also provides a number of features that make it easy to query and update data, such as predicates and fetch requests.
+
+#### UserDefaults
+UserDefaults is a simple key-value store that is used to store small amounts of data in iOS apps. UserDefaults is easy to use, but it is not as powerful as Core Data. UserDefaults also does not provide any features for querying or updating data.
+
+<h2 name="singleton">Singleton</h2>
+
+Singleton is a design pattern that used to make sure that a class has only one instance. I usually use it as a user information manager, to make sure the state of user stay updated. I would create a class and create a private let property to store the instance of the class. And then make its init privately, to make sure there would never be second instance.
+
+<h2 name="troubleShooting">TroubleShooting</h2>
+
+##### How do you debug and troubleshoot issues in an iOS app? Explain the tools and techniques you would use.
+
+Logging is the most common way to identify potential problems, and breakpoint would come alone the way, print out the statements also give a lot of help, but I think the most efficient way for detecting UI error is using simulator.
+
+<h2 name="retainCycle">Retain cycle</h2>
+
+##### Can you explain what a retain cycle is? 
+
+A retain cycle happens when two or more objects hold strong references to each other, creating a circular dependency. As a result, the reference count for each object never reaches zero, preventing them from being deallocated. This can lead to memory leaks and consume more memory than necessary.
+
+<h2 name="refType">strong, weak, unowned</h2>
+
+##### Strong References:
+Strong references increase the reference count of an object, keeping it alive in memory as long as there is at least one strong reference to it.
+Use strong references when you want to ensure that an object remains in memory as long as it is needed.
+
+##### Weak References:
+Weak references do not increase the reference count of an object. They are typically used to avoid strong reference cycles (retain cycles) and prevent memory leaks.  
+
+Use weak references when you want to establish a relationship where the referenced object may become deallocated at some point, and you don't want to keep it alive artificially.  
+
+Weak references are automatically set to nil when the referenced object is deallocated.
+
+##### Unowned References:
+Unowned references are similar to weak references in that they do not increase the reference count. However, unowned references are assumed to always have a valid value.  
+
+Use unowned references when you are confident that the referenced object will not be deallocated as long as the unowned reference exists.
+Unlike weak references, unowned references are not optional types and should be used with caution. Accessing an unowned reference after the referenced object is deallocated leads to a runtime crash.
+
+Choosing between strong, weak, and unowned references depends on the relationship and ownership between objects. Use strong references when you want to ensure an object remains in memory as long as it is needed.
+
+<h2 name="arc">Automatic Reference Counting</h2>
+
+##### Reference Counting:
+ARC keeps track of the number of references to each object using a reference count. It increments the count when a new reference is created and decrements it when a reference is no longer used.
+
+##### Retain and Release:
+When an object is assigned to a new variable or stored in a collection, ARC automatically increases its reference count.  
+	
+ When a reference to an object is no longer needed, ARC automatically decreases its reference count.
+ 
+##### Automatic Deallocation:
+When the reference count of an object reaches zero, meaning there are no more references to it, ARC automatically deallocates the object's memory.  
+
+Deallocation triggers the object's deinitializer to perform any necessary cleanup.
+
+##### Strong and Weak References:
+Objects can have strong or weak references.
+
+Strong references increase the reference count and ensure that the object remains in memory as long as there is at least one strong reference to it.  
+
+Weak references, on the other hand, do not increase the reference count. They allow objects to be deallocated when there are no strong references remaining.
+
+##### Avoiding Retain Cycles:
+Retain cycles occur when objects hold strong references to each other, forming a reference cycle that prevents deallocation.  
+
+To avoid retain cycles, ARC provides the weak and unowned reference types to create non-owning references between objects.
+
 
 
 
