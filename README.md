@@ -12,13 +12,13 @@
 - [Protocol-Oriented programming](#pop)
 - Architecture: MVVM, MVVM-C, MVC
 - [SOLID principles](#solid)
-- [Unit Test](#unitTest), [UI Test](#uiTest)
-- [Access control: open vs public](#accessControl)
-- [Dependency injection](#DI)
-- [Approach for data persistence](#dataPersistence)
+- [Unit Test](#unittest), [UI Test](#uitest)
+- [Access control: open vs public](#access_control)
+- [Dependency injection](#di)
+- [Approach for data persistence](#data_persistence)
 - [Singletion](#singleton)
-- [TroubleShooting](#troubleShooting)
-- [Retain cycle](#retainCycle), [strong, weak, unowned](#refType), [ARC](#arc)
+- [TroubleShooting](#trouble_shooting)
+- [Retain cycle](#retain_cycle), [strong, weak, unowned](#ref_type), [ARC](#arc)
 - Bounds and frame
 - Combine
 
@@ -89,7 +89,9 @@
 - We can release any resources associated with the object that need manual cleanup.
 - Removing observers
 
+
 <h2 name="#appLifeCycle">App - life cycle</h2>
+
 
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 - `application(_:didFinishLaunchingWithOptions:)`
@@ -117,13 +119,17 @@
 
 
 <h2 name="#optional">Optional</h2>
+
+
 An optional is a way to handle a variable that mighe be empty. It adds a question mark to the variable's type, indicating the possibility to be nil.
 
 To work with optional value, there were two safe way we can obtain the value: Optional chaining and Conditional binding. 
 
 It is important to note that force unwrapping is unsafe way to get the value. It would cause a crash when you try to get the value from the variable, but the variable is empty.
 
+
 <h2 name="#structVSClass">@escaping</h2>
+
 
 ### What's the difference between an @escaping and a non-@escaping closure?
 
@@ -139,7 +145,9 @@ non-@escaping closure is the default behaviour in Swift. It is a closure that is
 The key difference lies in how the closure is treated by the complier. For non-@escaping closures, the compiler can make certain optimazations since it know the closure will not outlive the function. In constrast, @escaping closure requires addtional considerations by the compiler to ensure the capured values retained and the closure is available when needed. 
 
 
+
 <h2 name="#escaping">Struct vs Class</h2>
+
 
 ### What is the difference between struct and a class in Swift?
 
@@ -152,7 +160,9 @@ Class is reference type, and it support inheritance, and they're stored on the h
 ##### Which one is better?
 Choosing between a Struct and a Class depends on the specific use case and requirements. Struct are suitable for small, simple, and immutable data structure, while classes are preferred for more complex objects that require reference semantics, inheritance, and more advanced features.
 
+
 <h2 name="#valueVSReference">Value type vs reference type</h2>
+
 
 ### What's the difference between a value type and a reference type?
 
@@ -162,7 +172,10 @@ A value type is a type that is copied when assigned to a new variable or passed 
 ##### Reference Type
 A reference type is a type that is passed b reference. When assigned to a new variable or passed as an argument, a referenceto the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
 
+
 <h2 name="#stateVariable">State variable</h2>
+
+
 When you declare a property or method as `state`, it means there is only one copy of that property or method shared across all instances of the class or struct, and you can access it directly through the type itself.
 
 ##### Static Property
@@ -180,6 +193,7 @@ When you declare a property or method as `state`, it means there is only one cop
 
 
 <h2 name="#oop">Object-Oriented Programming(OOP)</h2>
+
 
 In OOP, software is designed and organized using objects, which are instances of classses representing real-world entities or concerpts.
 
@@ -206,6 +220,8 @@ Polymorphism allows objects of different classes to be treated as objects of a c
 
 
 <h2 name="#pop">Protocol-Oriented programming(POP)</h2>
+
+
 Protocol-Oriented Programming is a programming paradigm that emphasizes the use of protocols to define interfaces and behaviour, promoting code reuse and flexibility.
 
 #### Key Concepts:
@@ -231,6 +247,7 @@ Code reuse is achieved through composition rather than inheritance. Instead of u
 
 <h2 name="#solid">SOLID Principle</h2>
 
+
 #### Single responsible
 Responsible for one
 
@@ -247,7 +264,8 @@ No code should be force to depend on method it doesn’t use.
 High level should not import anything from low-level modules. Both should depend on abstractions
 
 
-<h2 name="#unitTest">Unit Testing</h2>
+<h2 name="#unittest">Unit Testing</h2>
+
 
 The purpose of unit testing is to ensure that each unit of code functions as intended and to catch and fix bugs early in the development process.
 
@@ -258,7 +276,9 @@ The purpose of unit testing is to ensure that each unit of code functions as int
 
 2. Early Bug Detection
 
-<h2 name="#uiTest">UI Testing</h2>
+
+<h2 name="#uitest">UI Testing</h2>
+
 
 Unlike unit tests that test individual components in isolation, UI tests interact with the application as a whole, simulating user interactions to verify that the ui behaves correctly.
 
@@ -271,7 +291,7 @@ Unlike unit tests that test individual components in isolation, UI tests interac
 1. Ensure that the test environment is setup with necessary test data.
 2. Ansnchronous Operations, some UI interactions and actions may take time to complete.
 
-<h2 name="#accessControl">Access control</h2>
+<h2 name="#access_control">Access control</h2>
 
 What's the difference between open and public?
 
@@ -285,14 +305,14 @@ This level of access allows entities to be accessed from any module but does not
 Open provides the broadest level of access, allowing subclassing and overriding from outside the module, while public provides access to entities from other modules but restricts subclassing and overriding to
 
 
-<h2 name="#DI">Dependency Injection</h2>
+<h2 name="#di">Dependency Injection</h2>
 
 In DI, instead of components creating or obtaining their dependencies internally, the dependencies are provided from external sources. This external source, often called the "dependency injector”, is responsible for creating and managing the dependencies.  
 
 Overall, Dependency Injection promotes decoupling, flexibility, and maintainability in software systems by separating the responsibility of managing dependencies from the components themselves.
 
 
-<h2 name="#dataPersistence">Approach for data persistence</h2>
+<h2 name="#data_persistence">Approach for data persistence</h2>
 
 #### coreData
 Core Data is object-oriented, which makes it easy to store and manage complex data models. Core Data also provides a number of features that make it easy to query and update data, such as predicates and fetch requests.
@@ -304,19 +324,19 @@ UserDefaults is a simple key-value store that is used to store small amounts of 
 
 Singleton is a design pattern that used to make sure that a class has only one instance. I usually use it as a user information manager, to make sure the state of user stay updated. I would create a class and create a private let property to store the instance of the class. And then make its init privately, to make sure there would never be second instance.
 
-<h2 name="#troubleShooting">TroubleShooting</h2>
+<h2 name="#trouble_shooting">TroubleShooting</h2>
 
 ##### How do you debug and troubleshoot issues in an iOS app? Explain the tools and techniques you would use.
 
 Logging is the most common way to identify potential problems, and breakpoint would come alone the way, print out the statements also give a lot of help, but I think the most efficient way for detecting UI error is using simulator.
 
-<h2 name="#retainCycle">Retain cycle</h2>
+<h2 name="#retain_cycle">Retain cycle</h2>
 
 ##### Can you explain what a retain cycle is? 
 
 A retain cycle happens when two or more objects hold strong references to each other, creating a circular dependency. As a result, the reference count for each object never reaches zero, preventing them from being deallocated. This can lead to memory leaks and consume more memory than necessary.
 
-<h2 name="#refType">strong, weak, unowned</h2>
+<h2 name="#ref_type">strong, weak, unowned</h2>
 
 ##### Strong References:
 Strong references increase the reference count of an object, keeping it alive in memory as long as there is at least one strong reference to it.
