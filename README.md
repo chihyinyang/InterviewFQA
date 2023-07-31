@@ -2,7 +2,7 @@
 
 ## Overview
 - [viewController - life cycle](#viewcontroller-life-cycle)
-- [App - life cycle](#appLifeCycle)
+- [App Life Cycle](#appLifeCycle)
 - [Optional](#optional)
 - [@escaping](#escaping)
 - [Struct vs Class](#structVSClass)
@@ -13,7 +13,7 @@
 - Architecture: MVVM, MVVM-C, MVC
 - [SOLID principles](#solid)
 - [Unit Test](#unittest), [UI Test](#uitest)
-- [Access control: open vs public](#access_control)
+- [Access control: open vs public](#access-control)
 - [Dependency injection](#dependency-injection)
 - [Approach for data persistence](#data_persistence)
 - [Singletion](#singleton)
@@ -89,7 +89,7 @@
 - We can release any resources associated with the object that need manual cleanup.
 - Removing observers
 
-<h2 name="#appLifeCycle">App - life cycle</h2>
+## App Life Cycle
 
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 - `application(_:didFinishLaunchingWithOptions:)`
