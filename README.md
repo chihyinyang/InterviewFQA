@@ -1,7 +1,7 @@
 # InterviewFQA
 
 ## Overview
-- [viewController - life cycle](#viewControllerLifeCycle)
+- [viewController - life cycle](#viewcontroller-life-cycle)
 - [App - life cycle](#appLifeCycle)
 - [Optional](#optional)
 - [@escaping](#escaping)
@@ -23,7 +23,7 @@
 - Combine
 
 
-<h2 name="viewControllerLifeCycle">ViewController - Life cycle</h2>
+## ViewController Life Cycle
 
 ### Life Cycle happens order
 1. init
