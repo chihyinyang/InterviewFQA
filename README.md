@@ -7,18 +7,18 @@
 - [@escaping](#escaping)
 - [Struct vs Class](#struct-vs-class)
 - [Value type vs reference type](#value-vs-reference)
-- [State variable](#stateVariable)
-- [Object-Oriented Programming(OOP)](#oop)
-- [Protocol-Oriented programming](#pop)
+- [State variable](#state-variable)
+- [Object-Oriented Programming](#object-oriented-programming)
+- [Protocol-Oriented programming](#protocol-oriented-programming)
 - Architecture: MVVM, MVVM-C, MVC
-- [SOLID principles](#solid)
-- [Unit Test](#unittest), [UI Test](#uitest)
+- [SOLID principles](#solid-principles)
+- [Unit Test](#unit-test), [UI Test](#ui-test)
 - [Access control: open vs public](#access-control)
 - [Dependency injection](#dependency-injection)
-- [Approach for data persistence](#data_persistence)
+- [Approach for data persistence](#data-persistence)
 - [Singletion](#singleton)
-- [TroubleShooting](#trouble_shooting)
-- [Retain cycle](#retain_cycle), [strong, weak, unowned](#ref_type), [ARC](#arc)
+- [TroubleShooting](#trouble-shooting)
+- [Retain cycle](#retain-cycle), [strong, weak, unowned](#strong,-weak,-unowned), [ARC](#arc)
 - Bounds and frame
 - Combine
 
