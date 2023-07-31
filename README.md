@@ -2,11 +2,11 @@
 
 ## Overview
 - [ViewController Life Cycle](#viewcontroller-life-cycle)
-- [App Life Cycle](#appLifeCycle)
+- [App Life Cycle](#app-Life-Cycle)
 - [Optional](#optional)
 - [@escaping](#escaping)
-- [Struct vs Class](#structVSClass)
-- [Value type vs reference type](#valueVSReference)
+- [Struct vs Class](#struct-vs-class)
+- [Value type vs reference type](#value-vs-reference)
 - [State variable](#stateVariable)
 - [Object-Oriented Programming(OOP)](#oop)
 - [Protocol-Oriented programming](#pop)
