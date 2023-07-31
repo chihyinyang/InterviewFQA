@@ -96,7 +96,7 @@
 
 
 ## App Life Cycle
-
+? difference between appDelegate & SceneDelegate
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 - `application(_:didFinishLaunchingWithOptions:)`
   - This method will be called when app is launched.
