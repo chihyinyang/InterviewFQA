@@ -96,7 +96,7 @@
 
 
 ## App Life Cycle
-? difference between appDelegate & SceneDelegate
+
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 ### `application(_:didFinishLaunchingWithOptions:)`
   - This method will be called when app is launched.
@@ -121,7 +121,7 @@
   - This method is called when the system issues a memory warning to the app due to low memory conditions.
   - You can release the unnecessary memory and resources to prevent the app from being terminated.
 
-### [What's the difference between AppDelegate and SceneDelegate?](https://github.com/chihyinyang/InterviewFQA/blob/main/SceneDelegate.md))
+### [What's the difference between AppDelegate and SceneDelegate?](https://github.com/chihyinyang/InterviewFQA/blob/main/SceneDelegate.md)
 
   
 <div align="right">
