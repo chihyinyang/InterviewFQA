@@ -121,10 +121,12 @@
   - This method is called when the system issues a memory warning to the app due to low memory conditions.
   - You can release the unnecessary memory and resources to prevent the app from being terminated.
  
+
   
 <div align="right">
   <a href="#overview">⬆️ Back to Overview</a>
 </div>
+
 
 
 ## Optional
@@ -136,9 +138,11 @@ To work with optional value, there were two safe way we can obtain the value: Op
 It is important to note that force unwrapping is unsafe way to get the value. It would cause a crash when you try to get the value from the variable, but the variable is empty.
 
 
+
 <div align="right">
   <a href="#overview">⬆️ Back to Overview</a>
 </div>
+
 
 
 ## @escaping
