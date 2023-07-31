@@ -120,6 +120,12 @@
 - `applicationDidReceiveMemoryWarning(_:):`
   - This method is called when the system issues a memory warning to the app due to low memory conditions.
   - You can release the unnecessary memory and resources to prevent the app from being terminated.
+ 
+  
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## Optional
 
@@ -128,6 +134,12 @@ An optional is a way to handle a variable that mighe be empty. It adds a questio
 To work with optional value, there were two safe way we can obtain the value: Optional chaining and Conditional binding. 
 
 It is important to note that force unwrapping is unsafe way to get the value. It would cause a crash when you try to get the value from the variable, but the variable is empty.
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## @escaping
 
@@ -143,6 +155,11 @@ non-@escaping closure is the default behaviour in Swift. It is a closure that is
 
 ##### Key Diff
 The key difference lies in how the closure is treated by the complier. For non-@escaping closures, the compiler can make certain optimazations since it know the closure will not outlive the function. In constrast, @escaping closure requires addtional considerations by the compiler to ensure the capured values retained and the closure is available when needed. 
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
 
 
 ## Struct vs Class
@@ -168,6 +185,12 @@ A value type is a type that is copied when assigned to a new variable or passed 
 ##### Reference Type
 A reference type is a type that is passed b reference. When assigned to a new variable or passed as an argument, a referenceto the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## State Variable
 
 When you declare a property or method as `state`, it means there is only one copy of that property or method shared across all instances of the class or struct, and you can access it directly through the type itself.
@@ -184,6 +207,11 @@ When you declare a property or method as `state`, it means there is only one cop
   // Accessing the static property without creating an instance.
   let value = AClass.count
   ```
+  
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## Object-Oriented Programming
 
@@ -210,6 +238,12 @@ Polymorphism allows objects of different classes to be treated as objects of a c
 - Flexibility
 - Scalability
 
+  
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Protocol-Oriented programming
 
 Protocol-Oriented Programming is a programming paradigm that emphasizes the use of protocols to define interfaces and behaviour, promoting code reuse and flexibility.
@@ -234,6 +268,12 @@ Code reuse is achieved through composition rather than inheritance. Instead of u
 - Protocol Extensioins
 - Testability
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## SOLID Principles
 
 #### Single responsible
@@ -251,6 +291,11 @@ No code should be force to depend on method it doesn’t use.
 #### Dependence inversion
 High level should not import anything from low-level modules. Both should depend on abstractions
 
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Unit Test
 
 The purpose of unit testing is to ensure that each unit of code functions as intended and to catch and fix bugs early in the development process.
@@ -261,6 +306,12 @@ The purpose of unit testing is to ensure that each unit of code functions as int
    -> This makes it easier to identify and fix issue.
 
 2. Early Bug Detection
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## UI Test
 
@@ -274,8 +325,13 @@ Unlike unit tests that test individual components in isolation, UI tests interac
 #### Things to notice in UI testing:
 1. Ensure that the test environment is setup with necessary test data.
 2. Ansnchronous Operations, some UI interactions and actions may take time to complete.
+   
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
 
-## Access control
+
+## Access Control
 
 What's the difference between open and public?
 
@@ -288,11 +344,23 @@ This level of access allows entities to be accessed from any module but does not
 ##### To summarise
 Open provides the broadest level of access, allowing subclassing and overriding from outside the module, while public provides access to entities from other modules but restricts subclassing and overriding to
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Dependency Injection
 
 In DI, instead of components creating or obtaining their dependencies internally, the dependencies are provided from external sources. This external source, often called the "dependency injector”, is responsible for creating and managing the dependencies.  
 
 Overall, Dependency Injection promotes decoupling, flexibility, and maintainability in software systems by separating the responsibility of managing dependencies from the components themselves.
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## Approach for data persistence
 
@@ -306,17 +374,35 @@ UserDefaults is a simple key-value store that is used to store small amounts of 
 
 Singleton is a design pattern that used to make sure that a class has only one instance. I usually use it as a user information manager, to make sure the state of user stay updated. I would create a class and create a private let property to store the instance of the class. And then make its init privately, to make sure there would never be second instance.
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Trouble Shooting
 
 ##### How do you debug and troubleshoot issues in an iOS app? Explain the tools and techniques you would use.
 
 Logging is the most common way to identify potential problems, and breakpoint would come alone the way, print out the statements also give a lot of help, but I think the most efficient way for detecting UI error is using simulator.
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Retain Cycle
 
 ##### Can you explain what a retain cycle is? 
 
 A retain cycle happens when two or more objects hold strong references to each other, creating a circular dependency. As a result, the reference count for each object never reaches zero, preventing them from being deallocated. This can lead to memory leaks and consume more memory than necessary.
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## Strong, Weak, Unowned
 
@@ -338,6 +424,12 @@ Use unowned references when you are confident that the referenced object will no
 Unlike weak references, unowned references are not optional types and should be used with caution. Accessing an unowned reference after the referenced object is deallocated leads to a runtime crash.
 
 Choosing between strong, weak, and unowned references depends on the relationship and ownership between objects. Use strong references when you want to ensure an object remains in memory as long as it is needed.
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 
 ## Automatic Reference Counting
 
@@ -366,6 +458,10 @@ Retain cycles occur when objects hold strong references to each other, forming a
 
 To avoid retain cycles, ARC provides the weak and unowned reference types to create non-owning references between objects.
 
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
 
 
 
