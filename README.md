@@ -14,7 +14,7 @@
 - [SOLID principles](#solid)
 - [Unit Test](#unittest), [UI Test](#uitest)
 - [Access control: open vs public](#access_control)
-- [Dependency injection](#di)
+- [Dependency injection](#dependency-injection)
 - [Approach for data persistence](#data_persistence)
 - [Singletion](#singleton)
 - [TroubleShooting](#trouble_shooting)
@@ -89,9 +89,7 @@
 - We can release any resources associated with the object that need manual cleanup.
 - Removing observers
 
-
 <h2 name="#appLifeCycle">App - life cycle</h2>
-
 
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
 - `application(_:didFinishLaunchingWithOptions:)`
@@ -145,9 +143,7 @@ non-@escaping closure is the default behaviour in Swift. It is a closure that is
 The key difference lies in how the closure is treated by the complier. For non-@escaping closures, the compiler can make certain optimazations since it know the closure will not outlive the function. In constrast, @escaping closure requires addtional considerations by the compiler to ensure the capured values retained and the closure is available when needed. 
 
 
-
 <h2 name="#escaping">Struct vs Class</h2>
-
 
 ### What is the difference between struct and a class in Swift?
 
@@ -160,9 +156,7 @@ Class is reference type, and it support inheritance, and they're stored on the h
 ##### Which one is better?
 Choosing between a Struct and a Class depends on the specific use case and requirements. Struct are suitable for small, simple, and immutable data structure, while classes are preferred for more complex objects that require reference semantics, inheritance, and more advanced features.
 
-
 <h2 name="#valueVSReference">Value type vs reference type</h2>
-
 
 ### What's the difference between a value type and a reference type?
 
@@ -172,9 +166,7 @@ A value type is a type that is copied when assigned to a new variable or passed 
 ##### Reference Type
 A reference type is a type that is passed b reference. When assigned to a new variable or passed as an argument, a referenceto the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
 
-
 <h2 name="#stateVariable">State variable</h2>
-
 
 When you declare a property or method as `state`, it means there is only one copy of that property or method shared across all instances of the class or struct, and you can access it directly through the type itself.
 
@@ -191,9 +183,7 @@ When you declare a property or method as `state`, it means there is only one cop
   let value = AClass.count
   ```
 
-
 <h2 name="#oop">Object-Oriented Programming(OOP)</h2>
-
 
 In OOP, software is designed and organized using objects, which are instances of classses representing real-world entities or concerpts.
 
@@ -218,9 +208,7 @@ Polymorphism allows objects of different classes to be treated as objects of a c
 - Flexibility
 - Scalability
 
-
 <h2 name="#pop">Protocol-Oriented programming(POP)</h2>
-
 
 Protocol-Oriented Programming is a programming paradigm that emphasizes the use of protocols to define interfaces and behaviour, promoting code reuse and flexibility.
 
@@ -244,9 +232,7 @@ Code reuse is achieved through composition rather than inheritance. Instead of u
 - Protocol Extensioins
 - Testability
 
-
 <h2 name="#solid">SOLID Principle</h2>
-
 
 #### Single responsible
 Responsible for one
@@ -276,9 +262,7 @@ The purpose of unit testing is to ensure that each unit of code functions as int
 
 2. Early Bug Detection
 
-
 <h2 name="#uitest">UI Testing</h2>
-
 
 Unlike unit tests that test individual components in isolation, UI tests interact with the application as a whole, simulating user interactions to verify that the ui behaves correctly.
 
@@ -305,12 +289,11 @@ This level of access allows entities to be accessed from any module but does not
 Open provides the broadest level of access, allowing subclassing and overriding from outside the module, while public provides access to entities from other modules but restricts subclassing and overriding to
 
 
-<h2 name="#di">Dependency Injection</h2>
+## Dependency Injection
 
 In DI, instead of components creating or obtaining their dependencies internally, the dependencies are provided from external sources. This external source, often called the "dependency injector”, is responsible for creating and managing the dependencies.  
 
 Overall, Dependency Injection promotes decoupling, flexibility, and maintainability in software systems by separating the responsibility of managing dependencies from the components themselves.
-
 
 <h2 name="#data_persistence">Approach for data persistence</h2>
 
