@@ -89,9 +89,11 @@
 - We can release any resources associated with the object that need manual cleanup.
 - Removing observers
 
+
 <div align="right">
   <a href="#overview">⬆️ Back to Overview</a>
 </div>
+
 
 ## App Life Cycle
 
