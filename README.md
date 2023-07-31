@@ -89,6 +89,10 @@
 - We can release any resources associated with the object that need manual cleanup.
 - Removing observers
 
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
 ## App Life Cycle
 
 #### The `AppDelegate` class in iOS is responsible for manaing the app's life cycle and responding to various state changes.
