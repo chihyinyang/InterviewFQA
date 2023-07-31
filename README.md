@@ -6,7 +6,7 @@
 - [Optional](#optional)
 - [@escaping](#escaping)
 - [Struct vs Class](#struct-vs-class)
-- [Value Type vs Reference Type](#value-type-vs-reference_type)
+- [Value Type vs Reference Type](#value-type-vs-reference-type)
 - [State variable](#state-variable)
 - [Object-Oriented Programming](#object-oriented-programming)
 - [Protocol-Oriented programming](#protocol-oriented-programming)
