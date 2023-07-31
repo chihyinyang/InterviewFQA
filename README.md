@@ -23,7 +23,7 @@
 - Combine
 
 
-<h2 name="viewControllerLifeCycle">ViewController - Life cycle</h2>
+<h2 name="#viewControllerLifeCycle">ViewController - Life cycle</h2>
 
 ### Life Cycle happens order
 1. init
