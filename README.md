@@ -2,7 +2,7 @@
 
 ## Overview
 - [viewController - life cycle](#viewControllerLifeCycle)
-- [App - life cycle](#App_-_life_cycle)
+- [App - life cycle](#appLifeCycle)
 - [Optional](#optional)
 - [@escaping](#escaping)
 - [Struct vs Class](#structVSClass)
@@ -11,7 +11,7 @@
 - [Object-Oriented Programming(OOP)](#oop)
 - [Protocol-Oriented programming](#pop)
 - Architecture: MVVM, MVVM-C, MVC
-- [SOLID principles](#SOLID)
+- [SOLID principles](#solid)
 - [Unit Test](#unitTest), [UI Test](#uiTest)
 - [Access control: open vs public](#accessControl)
 - [Dependency injection](#DI)
@@ -229,7 +229,7 @@ Code reuse is achieved through composition rather than inheritance. Instead of u
 - Testability
 
 
-<h2 name="#SOLID">SOLID Principle</h2>
+<h2 name="#solid">SOLID Principle</h2>
 
 #### Single responsible
 Responsible for one
