@@ -15,7 +15,7 @@
 - [Unit Test](#unit-test), [UI Test](#ui-test)
 - [Access control: open vs public](#access-control)
 - [Dependency injection](#dependency-injection)
-- [Approach for data persistence](#data-persistence)
+- [Approach for data persistence](#approach-for-data-persistence)
 - [Singletion](#singleton)
 - [TroubleShooting](#trouble-shooting)
 - [Retain cycle](#retain-cycle), [Strong, Weak, Unowned](#strong,-weak,-unowned), [Automatic Reference Counting](#automatic-reference-counting)
@@ -398,7 +398,7 @@ Overall, Dependency Injection promotes decoupling, flexibility, and maintainabil
 
 
 
-## Approach for data persistence
+## Approach for Data Persistence
 
 #### coreData
 Core Data is object-oriented, which makes it easy to store and manage complex data models. Core Data also provides a number of features that make it easy to query and update data, such as predicates and fetch requests.
