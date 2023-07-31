@@ -18,7 +18,7 @@
 - [Approach for data persistence](#approach-for-data-persistence)
 - [Singletion](#singleton)
 - [TroubleShooting](#trouble-shooting)
-- [Retain cycle](#retain-cycle), [Strong, Weak, Unowned](#strong,-weak,-unowned), [Automatic Reference Counting](#automatic-reference-counting)
+- [Retain cycle](#retain-cycle), [Strong, Weak, Unowned](#strong-weak-unowned), [Automatic Reference Counting](#automatic-reference-counting)
 - Bounds and frame
 - Combine
 
