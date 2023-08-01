@@ -513,7 +513,9 @@ To avoid retain cycles, ARC provides the weak and unowned reference types to cre
 ## Frame VS Bounds
 
 ### bounds: 
-Represents the view's internal coordinate system, relative to its own origin (0,0). Used for drawing and layout within the view itself.
+Represents the view's internal coordinate system, relative to its own origin (0,0). Used for drawing and layout within the view itself.  
+
+The bounds property is especially useful when working with view drawing, animations, and transformations within the context of the view itself, without affecting its position and size within the superview.
 
 ### frame: 
 Represents the view's position and size relative to its superview's coordinate system. Used to position and size the view within its superview.
