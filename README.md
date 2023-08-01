@@ -509,5 +509,48 @@ To avoid retain cycles, ARC provides the weak and unowned reference types to cre
   <a href="#overview">⬆️ Back to Overview</a>
 </div>
 
+## Combine
 
+### That is Combine, and what problem does it solve?
+Combine is a framework in Swift that provides a declarative API for processing asynchronous and event-driven code. It simplifies handling asynchronous operations, managing data flow, and responding to events over time.
 
+### What are the main components of Combine?
+The main components of Combine are Publishers, Subscribers, and Operators. Publishers emit a sequence of values over time, Subscribers receive and react to those values, and Operators are used to transform, filter, or combine the emitted values.
+
+### How do you create a Combine Publisher?
+You can create a custom Publisher by implementing the Publisher protocol. A simple example could be a custom publisher that emits a sequence of integers.
+
+### What is the difference between a cold and hot Combine Publisher?
+A cold publisher starts emitting values when a Subscriber subscribes to it, while a hot publisher emits values regardless of whether any Subscribers are listening.
+
+### What are Operators in Combine, and how do they transform data?
+Operators in Combine are methods that modify or combine values emitted by Publishers. For example, map transforms each value emitted by a Publisher, while combineLatest combines values from multiple Publishers into a tuple.
+
+### What is backpressure, and how does Combine handle it?
+Backpressure is a mechanism to handle overwhelming data flow when the Subscriber cannot keep up with the emitted values. Combine handles backpressure using strategies like .buffer, .drop, and .latest.
+
+### What is the purpose of Subjects in Combine?
+Subjects act as both Publishers and Subscribers. They can be used to inject values into a Combine pipeline, making them useful for bridging with imperative code or handling user inputs.
+
+### How do you handle errors in Combine?
+Errors in Combine are propagated downstream to Subscribers. You can handle errors using the catch operator to recover from an error or replace it with a default value.
+
+### How can you handle multiple Combine subscriptions and cancellations?
+To handle multiple subscriptions and cancellations in Combine, you can use cancelables, store(in:), or the Cancellable protocol to clean up subscriptions when they are no longer needed.
+Explain the concept of Combine's Scheduler and how it affects data processing.
+Combine's Scheduler determines the execution context for a Publisher's emissions and Subscribers' actions. Different Schedulers allow you to control when and where work is performed.
+
+### How can you test Combine code?
+Combine code can be tested using XCTest along with XCTestExpectation for asynchronous testing. Additionally, TestScheduler from Combine can be used to control the timing of events during testing.
+
+### What are some common memory management issues related to Combine?
+Common memory management issues include creating retain cycles when capturing self in Combine closures. Proper use of unowned, weak, and unowned(unsafe) is essential to avoid memory leaks.
+
+### Can Combine replace other asynchronous programming paradigms in Swift, like DispatchQueue and delegation?
+Combine can complement and, in some cases, replace other asynchronous paradigms, but it depends on the specific use case and the complexity of the code.
+
+### How do you handle cancellation and cleanup in Combine?
+Combine's Cancellable protocol helps manage cleanup tasks when a subscription is canceled. It's crucial to properly handle cleanup to avoid resource leaks.
+
+### What are some common use cases of Combine in real-world iOS apps?
+Combine can be used for handling API requests, updating UI components based on data changes, form validation, reactive UI bindings, handling user interactions, etc.
