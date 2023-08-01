@@ -20,7 +20,7 @@
 - [TroubleShooting](#trouble-shooting)
 - [Retain cycle](#retain-cycle), [Strong, Weak, Unowned](#strong-weak-unowned), [Automatic Reference Counting](#automatic-reference-counting)
 - Bounds and frame
-- Combine
+- [Combine](#combine)
 
 
 ## ViewController Life Cycle
