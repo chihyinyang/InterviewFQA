@@ -198,7 +198,7 @@ Choosing between a Struct and a Class depends on the specific use case and requi
 A value type is a type that is copied when assigned to a new variable or passed as a function argument. Modifying a copy of a value type does not affect to the original instance. Examples of value type in Swift include struct, intergers, string and enum.
 
 #### Reference Type
-A reference type is a type that is passed b reference. When assigned to a new variable or passed as an argument, a referenceto the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
+A reference type is a type that is passed by reference. When assigned to a new variable or passed as an argument, a reference to the exsiting instance is created, and both variable point to the same underlying object in memory. Modifying a reference type affect all variables that reference the same object. Examples of reference type in Swift include Class, closure.
 
 
 
