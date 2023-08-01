@@ -19,7 +19,7 @@
 - [Singletion](#singleton)
 - [TroubleShooting](#trouble-shooting)
 - [Retain cycle](#retain-cycle), [Strong, Weak, Unowned](#strong-weak-unowned), [Automatic Reference Counting](#automatic-reference-counting)
-- Bounds and frame
+- [Frame VS Bounds](#frame-vs-bounds)
 - [Combine](#combine)
 
 
@@ -509,6 +509,21 @@ To avoid retain cycles, ARC provides the weak and unowned reference types to cre
   <a href="#overview">⬆️ Back to Overview</a>
 </div>
 
+
+## Frame VS Bounds
+
+### bounds: 
+Represents the view's internal coordinate system, relative to its own origin (0,0). Used for drawing and layout within the view itself.
+
+### frame: 
+Represents the view's position and size relative to its superview's coordinate system. Used to position and size the view within its superview.
+
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
 ## Combine
 
 ### That is Combine, and what problem does it solve?
@@ -554,3 +569,9 @@ Combine's Cancellable protocol helps manage cleanup tasks when a subscription is
 
 ### What are some common use cases of Combine in real-world iOS apps?
 Combine can be used for handling API requests, updating UI components based on data changes, form validation, reactive UI bindings, handling user interactions, etc.
+
+<div align="right">
+  <a href="#overview">⬆️ Back to Overview</a>
+</div>
+
+
